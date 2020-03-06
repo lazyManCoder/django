@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+}
+
+.pg-header{
+    width:900px;
+    height:600px;
+    border:solid rebeccapurple 2px;
+    position: fixed;
+    top:100px;
+    left:280px;
+    right:200px;
+    background-color:aqua;
+}
+
+
+.pg-body{
+    width:600px;
+    height:400px;
+    background-color:darkgray;
+    position: relative;
+    top:70px;
+    left:160px;
+}
+

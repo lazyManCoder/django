@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form action="/cmdb/useredit-{{ obj.id }}/" method="post">
+        <input type="text" name="id" style="display: none" value="{{ obj.id }}">
+        <input type="text" name="user" placeholder="{{ obj.username }}">
+        <input type="password" name="pwd" placeholder="{{ obj.password }}">
+        <input type="email" name="e" placeholder="{{ obj.email }}">
+        <input type="submit" value="确认修改">
+    </form>
+
+</body>
+</html>

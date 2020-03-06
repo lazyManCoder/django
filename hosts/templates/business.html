@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style-type: decimal;
+        }
+    </style>
+</head>
+<body>
+<h1>业务线列表</h1>
+<ul>
+    {% for row in v %}
+    <li>
+        {{ row.id }}-{{ row.caption }}-{{ row.code }}
+    </li>
+    {% endfor %}
+</ul>
+<h1>业务线列表二</h1>
+<ul>
+    {% for row in a %}
+    <li>
+        {{ row.caption }}-{{ row.code }}
+    </li>
+    {% endfor %}
+</ul>
+<h1>业务线列表三</h1>
+<ul>
+    {% for row in h %}
+    <li>
+        {{ row.0 }}-{{ row.1 }}
+    </li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

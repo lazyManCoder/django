@@ -1,0 +1,45 @@
+{% load filter %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container a {
+            display: inline-block;
+            padding: 3px 5px;
+            border: 1px solid #dddddd;
+            margin: 5px 5px;
+        }
+        .active{
+            background-color:aqua;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>过滤条件</h1>
+    <div>
+        {{ arg_list }}
+        <div>
+            {% filter_all arg_list 'article_type_id' %}
+            {% filter_article_type article_type arg_list %}
+
+        </div>
+
+        <div>
+            {% filter_all arg_list 'category_id' %}
+            {% filter_category category arg_list %}
+
+        </div>
+    </div>
+    <h1>查询结果</h1>
+    <ul>
+        {% for item in content %}
+            <li>{{ item.id }}-{{ item.content }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>

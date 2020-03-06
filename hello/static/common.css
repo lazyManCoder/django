@@ -1,0 +1,10 @@
+body{
+    background-color: #eeeeee;
+}
+
+label{
+    display: inline-block;
+
+    text-align: right;
+
+}

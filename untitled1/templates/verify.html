@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/bootstrap.css">
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <form action="/verify/" method="post">
+        {% csrf_token %}
+{#        {{ obj.as_p }}#}
+{#        {{ obj.as_ul }}#}
+{#        <table>#}
+{#            {{ obj.as_table }}#}
+{#        </table>#}
+        <p>{{ obj.user }}{{ obj.errors.user.0 }} </p>
+        <p>{{ obj.pwd }}{{ obj.errors.pwd.0 }} </p>
+        <p>{{ obj.email }}{{ obj.errors.email.0 }} </p>
+        <p>{{ obj.file }}{{ obj.errors.file.0 }} </p>
+        <input type="submit" class="btn btn-info" value="OK">
+    </form>
+    </div>
+</body>
+</html>

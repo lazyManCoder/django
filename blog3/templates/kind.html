@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div style="width: 500px;margin:0 auto;">
+        <textarea id="content"></textarea>
+    </div>
+
+    <script src="/static/jquery-1.12.4.js"></script>
+    <script src="/static/kindeditor-master/kindeditor-all.js"></script>
+    <script>
+        $(function (){
+            KindEditor.create('#content',{
+                items:[
+        'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
+        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+        'superscript', 'clearhtml', 'quickformat',
+                        ],
+                noDisableItems:["source","fullscree"],
+                designMode:false
+
+            })
+
+        })
+    </script>
+</body>
+</html>

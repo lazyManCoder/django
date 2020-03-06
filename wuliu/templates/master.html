@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% block css %}{% endblock %}">
+    <script>
+        function scroll() {
+            //console.log("打印log日志");实时看下效果
+            console.log("开始滚动！");
+        }
+
+        var scrollFunc = function (e) {
+            e = e || window.event;
+            if (e.wheelDelta) { //第一步：先判断浏览器IE，谷歌滑轮事件
+                if (e.wheelDelta > 0) { //当滑轮向上滚动时
+                    console.log("滑轮向上滚动");
+                }
+                if (e.wheelDelta < 0) { //当滑轮向下滚动时
+                    console.log("滑轮向下滚动");
+                }
+            } else if (e.detail) { //Firefox滑轮事件
+                if (e.detail > 0) { //当滑轮向上滚动时
+                    console.log("滑轮向上滚动");
+                }
+                if (e.detail < 0) { //当滑轮向下滚动时
+                    console.log("滑轮向下滚动");
+                }
+            }
+        };
+        //给页面绑定滑轮滚动事件
+        if (document.addEventListener) {//firefox
+            document.addEventListener('DOMMouseScroll', scrollFunc, false);
+        }
+        //滚动滑轮触发scrollFunc方法 //ie 谷歌
+        window.onmousewheel = document.onmousewheel = scrollFunc;
+    </script>
+</head>
+<body onscroll="scroll();">
+
+<div class="site-1">
+    <div class="site-2-0">
+        <div class="site-2-1">
+            <a>欢迎回来:{{ u }}</a>
+        </div>
+        <div class="site-2-2">
+            <a href="/cmdb/logout/">注销</a>
+        </div>
+
+    </div>
+
+    <div class="site-3-0">
+        <div class="site-3-1">
+            <div class="site-3-2">
+                <ul id="a1">
+                    <li><a href="/cmdb/index/">首页</a></li>
+                    <li><a href="#">精华</a></li>
+                    <li><a href="#">候选</a></li>
+                    <li><a href="#">新闻</a></li>
+                    <li><a href="#">关注</a></li>
+                    <li><a href="/cmdb/mine/">我的</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-4">
+        <div>
+            <ul>
+                <li><a>python</a></li>
+                <li><a>liunx</a></li>
+                <li><a>go</a></li>
+                <li><a>java</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <script src="/static/jquery-1.12.4.js"></script>
+
+</div>
+</body>
+</html>

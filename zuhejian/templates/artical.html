@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container a {
+            display: inline-block;
+            padding: 3px 5px;
+            border: 1px solid #dddddd;
+            margin: 5px 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>过滤条件</h1>
+    <div>
+
+        <div>
+            <a>全部</a>
+            {% for row in article_type %}
+                <a href="/article-{{ row.id }}-{{ arg_list.category_id }}.html/">{{ row.caption }}</a>
+            {% endfor %}
+
+        </div>
+
+        <div>
+            <a>全部</a>
+            {% for row in category %}
+                <a href="/article-{{ arg_list.article_type_id }}-{{ row.id }}.html/">{{ row.caption }}</a>
+            {% endfor %}
+
+        </div>
+    </div>
+    <h1>查询结果</h1>
+    <ul>
+        {% for item in content %}
+            <li>{{ item.id }}-{{ item.content }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+</body>
+</html>

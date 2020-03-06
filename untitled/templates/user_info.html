@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>主机管理</title>
+		<link rel="stylesheet" href="/static/bootstrap.min.css">
+		<style>
+			.t1{
+				height: 48px;
+				background-color:greenyellow;
+				color:blueviolet;
+				border-radius: 10px;
+				text-align: center;
+			}
+				
+			body{
+				margin: 0;
+			}
+			
+			.t2{
+				margin-top:48px;
+				width: 200px;
+				height: 600px;
+				border: 2px solid orange;
+				float: left;
+				text-align: center;
+				
+			}
+			
+				
+			.t2 ul{
+				list-style-type: circle;
+			}
+
+			.t3{
+				margin-top:48px;
+				width: 1200px;
+				height: 600px;
+				float: right;
+				margin-right: 40px;
+				border: 2px solid orange;
+				position: relative;
+			}
+			
+			.t3 .t4{
+				width: 600px;
+				height: 400px;
+				position: absolute;
+				top: 160px;
+				right: 200px;
+				border: 3px solid cornflowerblue;
+			}
+		</style>
+	</head>
+	<body style="background: url('/staic/2.jpg');">
+		<div class="t1">
+			<h3>welcome to visit our code!</h3>
+		</div>
+		<div class="t2">
+			<ul>
+				<li><a href="/cmdb/user_info">用户管理</a></li>
+				<li><a href="/cmdb/user_group">用户组管理</a></li>
+			</ul>
+			
+		</div>
+
+		<div class="t3">
+			<div class="t4">
+				<img src="/static/1.jpg/" style="width: 600px;height: 400px;" />
+			</div>
+			
+			
+            <h3>增加用户</h3>
+
+            <form action="/cmdb/user_info/" method="POST">
+                 <input type="text" name="u">
+                 <input type="password" name="p">
+                 <input type="text" name="e">
+                <select name="t2">
+                    {% for row in userlist %}
+                    <option value="{{ row.uid }}">{{ row.caption }}</option>
+                    {% endfor %}
+                </select>
+                 <input type="submit" value="提交">
+            </form>
+
+            <h3>用户列表</h3>
+			<ul>
+				{% for row in userinfo %}
+				<li><a href="/cmdb/userdetail-{{row.id}}/">{{row.username}}</a> |
+                    <span>{{ row.user_group.caption }}</span> |
+                    <a href="/cmdb/userdel-{{ row.id }}/">删除</a> |
+                    <a href="/cmdb/useredit-{{ row.id }}/">编辑</a>
+                </li>
+				{% endfor %}
+			</ul>
+		</div>
+
+		<script src="/static/jquery.min.js"></script>
+		<script src="/static/bootstrap.js"></script>
+	</body>
+</html>

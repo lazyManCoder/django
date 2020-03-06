@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>主机管理</title>
+			<link rel="stylesheet" href="/static/bootstrap.min.css">
+			<style>
+				.t1{
+					height: 48px;
+					background-color:greenyellow;
+					color:blueviolet;
+					border-radius: 10px;
+					text-align: center;
+				}
+					
+				body{
+					margin: 0;
+				}
+				
+				.t2{
+					margin-top:48px;
+					width: 200px;
+					height: 600px;
+					border: 2px solid orange;
+					float: left;
+					text-align: center;
+					
+				}
+				
+					
+				.t2 ul{
+					list-style-type: circle;
+				}
+				
+					
+				.t3{
+					margin-top:48px;
+					width: 1200px;
+					height: 600px;
+					float: right;
+					margin-right: 40px;
+					border: 2px solid orange;
+					
+				}
+			</style>
+		</head>
+		<body>
+			<div class="t1">
+				<h3>welcome to visit our code!</h3>
+			</div>
+			<div class="t2">
+				<ul>
+					<li><a href="/cmdb/user_info">用户管理</a></li>
+					<li><a href="/cmdb/user_group">用户组管理</a></li>
+				</ul>
+				
+			</div>
+			
+			<div class="t3">
+				<h1>用户的详细信息</h1>
+				<ul>
+				    <li>{{ obj.username }}</li>
+				    <li>{{ obj.password }}</li>
+				    <li>{{ obj.email }}</li>
+				</ul>
+			</div>
+	
+			<script src="/static/jquery.min.js"></script>
+			<script src="/static/bootstrap.js"></script>
+		</body>
+	</html>
+	
+    
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/common.css">
+
+
+</head>
+<body>
+    <h1 style="color:pink;">hello world!</h1>
+    <div class="pg-header">
+        <div class="pg-body">
+            <div class="content">
+                <form action="{% block url %}{% endblock %}" method="POST">
+                    {% csrf_token %}
+                    <p>{{ obj.user.label }} {{ obj.user.0 }}</p>
+                    <p>{{ obj.pwd.label }} {{ obj.pwd.0 }}</p>
+                    <input type="submit" value="确认">
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/static/jquery-1.12.4.js"></script>
+    <script src="/static/jquery.cookie.js"></script>
+    <script src="/static/jquery.js"></script>
+
+</body>
+</html>

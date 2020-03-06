@@ -1,0 +1,136 @@
+
+.site-1 {
+    width: 1500px;
+    height: 1500px;
+    border: solid rosybrown 2px;
+}
+
+.site-2-0 {
+    width: 1500px;
+    height: 40px;
+
+}
+
+.site-2-1 {
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    float: left;
+    background-color: whitesmoke;
+    margin-left: 30px;
+    border-radius: 27px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.site-2-2 {
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    float: right;
+    background-color: whitesmoke;
+    margin-right: 30px;
+    border-radius: 27px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.site-1 .site-2-0 .site-2-2 a:link {
+    color: black;
+
+}
+
+.site-3-1 {
+    width: 1500px;
+    height: 48px;
+    background-color: aqua;
+    margin-top: 50px;
+}
+
+.site-3-2 .site-3-3 {
+    width: 60px;
+    height: 48px;
+    background-color: black;
+    float: left;
+}
+
+.site-3-2 li {
+    display: inline;
+    margin-left: 55px;
+    text-decoration: none;
+    line-height: 48px;
+    border: 1px solid #711515;
+    padding: 3px 10px 3px 10px;
+    background-color: #B51032;
+    color: #FFFFFF;
+}
+
+.site-3-0 .site-3-1 .site-3-2 a:hover, a:visited, a:link {
+    color: #FFFFFF;
+    background-color: #711515;
+    cursor: pointer;
+}
+
+.site-4 {
+    width: 150px;
+    height: 500px;
+    border: 2px solid aqua;
+    margin-top: 20px;
+    margin-left: 30px;
+    float: left;
+
+}
+
+.site-4 ul {
+    text-align: left;
+    list-style-type: none;
+}
+
+.site-4 ul li {
+    text-align: left;
+    padding-top: 30px;
+    padding-right: 30px;
+
+}
+
+.site-5 {
+    float: left;
+    width: 1200px;
+    height: 500px;
+    border: 2px solid aqua;
+    margin-top: 20px;
+    margin-left: 60px;
+}
+
+.nav-content {
+    padding-bottom: 50px;
+    padding-left: 30px;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 60px;
+    float: left;
+    width: 1200px;
+    height: 100px;
+
+}
+
+.nav-footer{
+    margin-left:400px;
+    width:800px;
+    height:50px;
+
+    float: left;
+
+}
+
+.page{
+            float:left;
+            padding:5px;
+            margin: 4px;
+            margin-top:6px;
+            margin-left: 10px;
+        }
+
+#input{
+    margin-top:10px;
+}

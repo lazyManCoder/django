@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="/static/common.css">
+</head>
+<body>
+    <div>
+        <form action="/login/" method="POST">
+            <p>
+                <label for="user">账号：</label>
+                <input type="text" name="u" id="user">
+
+            </p>
+
+            <p>
+                <label for="pwd">密码：</label>
+                <input type="password" name="q" id="pwd">
+                <span>{{ error }}</span>
+            </p>
+            <p>
+                <select name="city" multiple>
+                    <option value="tj">天津</option>
+                    <option value="bj">北京</option>
+                    <option value="sh">上海</option>
+                </select>
+            </p>
+
+            <p>
+                <input type="file" value="选择文件" name="faf">
+            </p>
+
+            <input type="submit" value="提交">
+
+        </form>
+    </div>
+    <script src="/static/jquery-1.12.4.js"></script>
+</body>
+</html>

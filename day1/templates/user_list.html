@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .page{
+            padding:5px;
+            background-color:rosybrown;
+            margin:4px;
+        }
+        .page.active{
+            background-color:blue;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        {% for item in u %}
+        <li><div class="nav-content">
+        <div class="nav-item">
+            <h3>css选择器权重</h3>
+            <p class="nav-item-summary">
+                <a href="/cmdb/index/p/1.html/" target="_blank"></a>
+                学过css的小伙伴都是指css选择器的权重 !important Infinity 行间样式 1000 id 100 class|属性|伪类 10 标签|伪元素 1 通配符 0 权重相同
+                相同css文件：写在后面的起作用 不同css文件：后导入的起作用 但今天遇到一个问题
+            </p>
+        </div>
+        <div class="nav-item-foot">
+            <a href="/cmdb/person/"></a>
+            <span>点赞</span>
+            <span>评论</span>
+            <span>阅读</span>
+        </div>
+    </div></li>
+        {% endfor %}
+    </ul>
+
+    <div>
+        <select id="ps" onchange="changePageSize(this)">
+            <option value="10">10</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+
+    <div>
+        {{ page_str }}
+    </div>
+    <script src="/static/jquery-1.12.4.js"></script>
+    <script src="/static/jquery.cookie.js"></script>
+    <script>
+        $(function(){
+            var v = $.cookie('per_page_count');
+            $('#ps').val(v);
+        });
+
+        function changePageSize(ths){
+            var v = $(ths).val();
+            $.cookie('per_page_count',v);
+            location.reload();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/common.css">
+
+
+</head>
+<body>
+    <h1 style="color:pink;">hello world!</h1>
+    <div class="pg-header">
+        <div class="pg-body">
+            <div class="content">
+                <form action="/cmdb/login/" method="POST">
+                    {% csrf_token %}
+                    <p>{{ obj.user.label }} {{ obj.user.0 }}</p>
+                    <p>{{ obj.pwd.label }} {{ obj.pwd.0 }}</p>
+                    <p><input type="submit" value="登陆">  <input id="t1" type="button" value="注册"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/static/jquery-1.12.4.js"></script>
+    <script src="/static/jquery.cookie.js"></script>
+    <script src="/static/jquery.js"></script>
+
+</body>
+</html>

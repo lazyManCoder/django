@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="/static/common.css">
+</head>
+<body>
+    <form action="/cmdb/login/" method="POST">
+        <p>
+            <label for="user">账号：</label>
+                <input type="text" name="u" id="user">
+
+        </p>
+        <p>
+            <label for="pwd">密码：</label>
+                <input type="password" name="q" id="pwd">
+
+                <span>{{ error }}</span>
+        </p>
+
+        <p>
+            <label for="email">邮箱：</label>
+                <input type="text" name="e" id="email">
+
+                <span>{{ error }}</span>
+        </p>
+{#        <p>#}
+{#            男：<input type="radio" name="gender" value="1">#}
+{#            女：<input type="radio" name="gender" value="2">#}
+{#            中：<input type="radio" name="gender" value="3">#}
+{#        </p>#}
+{#        <p>#}
+{#            <input type="file" name="fafa" >#}
+{#        </p>#}
+        <input type="submit" value="提交">
+    </form>
+    <script src="/static/jquery-1.12.4.js"></script>
+</body>
+</html>

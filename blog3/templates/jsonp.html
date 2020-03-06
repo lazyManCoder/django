@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {{ res }}
+    <br>
+    <input value="点击" type="button" onclick="getclick();">
+    <hr/>
+    <div id="container"></div>
+    <script src="/static/jquery-1.12.4.js"></script>
+    <script>
+{#        function getclick(){#}
+{#            var tag = document.createElement('script');#}
+{#            tag.src = 'https://api.jisuapi.com/weather/query?callback=list&appkey=e5de5fcbe1800420&city=%E5%AE%BF%E5%B7%9E';#}
+{#            document.head.appendChild(tag);#}
+{#            document.head.removeChild(tag);#}
+{#        }#}
+    function getclick() {
+        $.ajax({
+            url: 'https://api.jisuapi.com/weather/query?callback=list&appkey=e5de5fcbe1800420&city=%E5%AE%BF%E5%B7%9E',
+            type: 'POST',
+            dataType: 'jsonp',
+            jsonp: 'callback',
+            jsonpCallback: 'list'
+        });
+    }
+    function list(arg){
+            document.getElementById("container").innerHTML = arg["result"]["city"];
+            console(arg);
+        }
+    </script>
+</body>
+</html>
